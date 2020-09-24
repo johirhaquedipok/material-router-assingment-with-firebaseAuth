@@ -1,5 +1,5 @@
 import Avatar from '@material-ui/core/Avatar';
-import Box from '@material-ui/core/Box';
+import { Box } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+  
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -31,18 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-};
+
 
 const SignIn = () => {
   const classes = useStyles();
@@ -100,12 +90,61 @@ const SignIn = () => {
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
+            
           </Grid>
+          <Grid container justify="center" >
+                <Grid item>
+                <Box mt={2}>
+                    <Typography  variant="body2">
+                    Or
+                </Typography>
+                </Box>
+            </Grid>
+          </Grid>
+          {/* extra starts */}
+          {/* extra sign in  buttons  */}
+          <Grid container justify="center">
+              {/* facebook button */}
+            
+                
+                <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="default"
+                className={classes.submit}
+                >
+                <Box mr={4}>
+                <span class="material-icons">
+                facebook
+                </span>
+                </Box>
+                   
+                Continue With Facebook
+                </Button>
+           
+            {/* goolge button */}
+            
+                
+                <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="default"
+                className={classes.submit}
+                >
+                <Box mr={4}>
+                <span class="material-icons">
+                mail
+                </span>
+                </Box>
+                   
+                Continue With Google
+                </Button>
+            
+           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
     </Container>
     );
 };

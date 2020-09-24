@@ -1,69 +1,68 @@
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Hidden from "@material-ui/core/Hidden";
-import React from 'react';
+import { Grid } from "@material-ui/core";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-    card: {
-      display: "flex",
-    },
-    cardDetails: {
-      flex: 1,
-    },
-    cardMedia: {
-      width: 200,
-    },
-  });
-const reusableCard = () => {
-    const classes = useStyles();
-    return (
-        <div>
-                  <Container maxWidth="lg" component="main">
-        <Grid item xs={12} md={6}>
-          <CardActionArea component="a" href="#">
-            <Card className={classes.card}>
-              <div className={classes.cardDetails}>
-                <CardContent>
-                  <Typography component="h2" variant="h5">
-                    This blog post shows
-                  </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    16 December
-                  </Typography>
-                  <Typography variant="subtitle1" paragraph>
-                    Cum sociis natoque penatibus et magnis dis parturient
-                    montes, nascetur ridiculus mus. Aenean eu leo quam.
-                    Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                    Sed posuere consectetur est at lobortis. Cras mattis
-                    consectetur purus sit amet fermentum.
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary">
-                    Continue reading...
-                  </Typography>
-                </CardContent>
-              </div>
-              <Hidden xsDown>
-                <CardMedia className={classes.cardMedia}>
-                  
-                  <img
-                    width="100%"
-                    src="https://images.unsplash.com/photo-1600662110488-ec1e36ad9870?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
-                    alt=""
-                  ></img>
-                </CardMedia>
-              </Hidden>
-            </Card>
-          </CardActionArea>
-        </Grid>
-      </Container>
-        </div>
-    );
-};
+   root: {
+  //   maxWidth: 345,
+  marginBottom: '0.5em',
+   },
+  heightimg:{
+    height: '14em',
+    width: '14em',
+    
+  },
+  
+  imgConten: {
+    display: "flex",
+  },
+});
 
-export default reusableCard;
+export default function ImgMediaCard() {
+  const classes = useStyles();
+
+  return (
+   <Grid container>
+      <Card className={classes.root}>
+      <CardActionArea className={classes.imgConten}>
+        <div>
+          <CardMedia
+          className={classes.heightimg}
+            component="img"
+            alt="Contemplative Reptile"
+            height="140"
+            image="https://images.unsplash.com/photo-1600280108805-655e0f010e09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=282&q=80"
+            title="Contemplative Reptile"
+          />
+        </div>
+        <div>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Cat
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+            </CardActions>
+          </CardContent>
+        </div>
+      </CardActionArea>
+    </Card>
+   </Grid>
+  );
+}
