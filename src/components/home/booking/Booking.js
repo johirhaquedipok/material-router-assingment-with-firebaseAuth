@@ -2,8 +2,7 @@ import { Button, Container, Typography, makeStyles } from "@material-ui/core";
 
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
-import Header from "../../header/Header";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import React from "react";
 import TextField from "@material-ui/core/TextField";
@@ -31,15 +30,14 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    textDecoration: "none",
   },
 }));
 const Booking = () => {
   const classes = useStyles();
   return (
     <div>
-      <Grid>
-        
-      </Grid>
+      <Grid></Grid>
       <Container maxWidth="lg">
         <Grid container xs={12}>
           <Grid item xs={12} md={6} className={classes.control}>
@@ -51,9 +49,9 @@ const Booking = () => {
               align="justify"
               className={classes.paraMargin}
             >
-              The Auto-layout makes the items equitably share the available
-              space. That also means you can set the width of one item and the
-              others will automatically resize around it.
+              The name Cox's Bazar originated from the name of a British East
+              India Company officer, Captain Hiram Cox, who was appointed as the
+              Superintendent of Palonki (today's Cox's Bazar) outpost.
             </Typography>
           </Grid>
           {/* Form started */}
@@ -88,31 +86,32 @@ const Booking = () => {
                 />
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                      <div>
-                      <label for="T">From</label>
-                      </div>
                     <div>
-                    <TextField type="date" required fullWidth autoFocus />
+                      <label for="T">From</label>
                     </div>
-
+                    <div>
+                      <TextField type="date" required fullWidth autoFocus />
+                    </div>
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                  <div>
-                      <label for="T">To</label>
-                      </div>
                     <div>
-                    <TextField type="date" required fullWidth autoFocus />
+                      <label for="T">To</label>
+                    </div>
+                    <div>
+                      <TextField type="date" required fullWidth autoFocus />
                     </div>
                   </Grid>
                 </Grid>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  className={classes.submit}
-                >
-                  Start Booking
-                </Button>
+                <Link to="/finalinfo" className={classes.submit}>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    className={classes.submit}
+                  >
+                    Start Booking
+                  </Button>
+                </Link>
               </form>
             </div>
           </Grid>

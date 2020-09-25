@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
+import {Link} from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import React from "react";
 import TextField from "@material-ui/core/TextField";
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    textDecoration:'none'
   },
 }));
 
@@ -93,19 +94,21 @@ const Signup = () => {
               />
             </Grid>
           </Grid>
+          <Link to='finalinfo' className={classes.submit} >
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign Up
+            </Button>
+          </Link>
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign Up
-          </Button>
           <Grid container justify="center">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link to='signin' href="#" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    textDecoration:'none'
   },
 }));
 
@@ -47,6 +48,7 @@ const SignIn = () => {
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
+          {/* Email field */}
           <TextField
             variant="outlined"
             margin="normal"
@@ -58,6 +60,7 @@ const SignIn = () => {
             autoComplete="email"
             autoFocus
           />
+          {/* password field */}
           <TextField
             variant="outlined"
             margin="normal"
@@ -69,8 +72,8 @@ const SignIn = () => {
             id="password"
             autoComplete="current-password"
           />
-         
-          <Button
+         <Link to='finalinfo' className={classes.submit}>
+         <Button
             type="submit"
             fullWidth
             variant="contained"
@@ -79,6 +82,8 @@ const SignIn = () => {
           >
             Sign In
           </Button>
+         </Link>
+      {/* extra option of sign in */}
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -86,7 +91,7 @@ const SignIn = () => {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link to='signup' href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
@@ -143,6 +148,7 @@ const SignIn = () => {
                 </Button>
             
            </Grid>
+           {/* extra ends */}
         </form>
       </div>
     </Container>

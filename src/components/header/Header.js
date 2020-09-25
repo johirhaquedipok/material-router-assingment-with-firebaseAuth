@@ -42,9 +42,10 @@ const Header = () => {
             noWrap
             className={classes.toolbarTitle}
           >
-            Company name
+            Travel Guru
           </Typography>
           <nav>
+            <Typography>
             <Link
               to="/home"
               variant="button"
@@ -87,6 +88,7 @@ const Header = () => {
                 SignUp
               </Button>
             </Link>
+            </Typography>
           </nav>
         </Toolbar>
       </AppBar>
