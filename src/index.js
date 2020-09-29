@@ -1,18 +1,18 @@
-import './index.css';
-
-import * as serviceWorker from './serviceWorker';
-
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Routes from './routes';
+import { firebase } from './firebase';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
+const App = (props) => {
+    return (
+        <BrowserRouter>
+            <Routes {...props}/>
+        </BrowserRouter>
+    )
+}
 
+firebase.auth().onAuthStateChanged((user)=>{
+    ReactDOM.render(<App user={user}/>, document.getElementById('root'));
+})
 
-serviceWorker.unregister();

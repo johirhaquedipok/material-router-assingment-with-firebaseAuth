@@ -39,7 +39,7 @@ const Booking = () => {
     <div>
       <Grid></Grid>
       <Container maxWidth="lg">
-        <Grid container xs={12}>
+        <Grid container >
           <Grid item xs={12} md={6} className={classes.control}>
             <Typography variant="h1" align="justify">
               Cox's Bazar
@@ -87,7 +87,7 @@ const Booking = () => {
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
                     <div>
-                      <label for="T">From</label>
+                      <label >From</label>
                     </div>
                     <div>
                       <TextField type="date" required fullWidth autoFocus />
@@ -95,14 +95,14 @@ const Booking = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <div>
-                      <label for="T">To</label>
+                      <label >To</label>
                     </div>
                     <div>
                       <TextField type="date" required fullWidth autoFocus />
                     </div>
                   </Grid>
                 </Grid>
-                <Link to="/finalinfo" className={classes.submit}>
+                <Link to="/signin" className={classes.submit}>
                   <Button
                     type="submit"
                     variant="contained"

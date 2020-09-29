@@ -5,21 +5,25 @@ import FinalInfo from "./components/finalInfo/FinalInfo";
 import Home from "./components/home/Home";
 import Layout from "./layout/Layout";
 import NoMatch from "./components/nomatch/NoMatch";
+import PrivateRoute from "./components/authRoutes/PrivateRoute";
 import React from "react";
 import SignIn from "./components/form/SignIn";
 import SignUp from "./components/form/SignUp";
 
-function App() {
+function Routes(props) {
   return (
     <Layout>
       <Switch>
-        <Route path='/FinalInfo'>
+        <PrivateRoute {...props} path="Booking" exact>
+          <Booking></Booking>
+        </PrivateRoute>
+        <Route path="/FinalInfo">
           <FinalInfo></FinalInfo>
         </Route>
-        <Route path='/Booking'>
+        <Route path="/Booking">
           <Booking></Booking>
         </Route>
-        <Route path='/signup'>
+        <Route path="/signup">
           <SignUp></SignUp>
         </Route>
         <Route path="/signin">
@@ -31,13 +35,13 @@ function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-     
-          <Route path="*">
-         <NoMatch></NoMatch>
-          </Route>
+
+        <Route path="*">
+          <NoMatch></NoMatch>
+        </Route>
       </Switch>
     </Layout>
   );
 }
 
-export default App;
+export default Routes;

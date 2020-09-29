@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   toolbarTitle: {
     flexGrow: 1,
   },
-  link: {
+  links: {
     margin: theme.spacing(1, 1.5),
     textDecoration: "none",
   },
@@ -46,48 +46,48 @@ const Header = () => {
           </Typography>
           <nav>
             <Typography>
-            <Link
-              to="/home"
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Home
-            </Link>
-
-            <Link to='/Booking'
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Booking
-            </Link>
-            <Link to='/finalinfo'
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Places
-            </Link>
-            <Link to="/signin" className={classes.link}>
-              <Button href="#" color="secondary" variant="contained">
-                Login
-              </Button>
-            </Link>
-            <Link className={classes.link} to="/signup">
-              <Button
+              <Link
+                to="/home"
+                variant="button"
                 
-                href="#"
-                variant="contained"
-                color="primary"
-                className={classes.link}
+                className={classes.links}
               >
-                SignUp
-              </Button>
-            </Link>
+                Home
+              </Link>
+
+              <Link
+                to="/Booking"
+                variant="button"
+                color="textPrimary"
+                
+                className={classes.links}
+              >
+                Booking
+              </Link>
+              <Link
+                to="/finalinfo"
+                variant="button"
+                color="textPrimary"
+               
+                className={classes.links}
+              >
+                Places
+              </Link>
+
+              <Link to="/signin" className={classes.links}>
+                <Button color="secondary" variant="contained">
+                  Login
+                </Button>
+              </Link>
+              <Link className={classes.links} to="/signup">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.links}
+                >
+                  SignUp
+                </Button>
+              </Link>
             </Typography>
           </nav>
         </Toolbar>
